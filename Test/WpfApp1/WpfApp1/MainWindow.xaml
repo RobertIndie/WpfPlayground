@@ -1,0 +1,31 @@
+﻿<Window
+        Name="window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:lcusb="http://schemas.arction.com/semibindablecharting/ultimate/" x:Class="WpfApp1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="window_Loaded">
+    <Grid>
+        <lcusb:LightningChartUltimate Name="chart" HorizontalAlignment="Left" Margin="76,27,0,0" VerticalAlignment="Top" Height="341" Width="659">
+            <lcusb:LightningChartUltimate.ViewXY>
+                <lcusb:ViewXY>
+                    <lcusb:ViewXY.XAxes>
+                        <lcusb:AxisX Maximum="20" ValueType="Number"/>
+                    </lcusb:ViewXY.XAxes>
+                    <lcusb:ViewXY.YAxes>
+                        <lcusb:AxisY Maximum="100" ValueType="Number"/>
+                    </lcusb:ViewXY.YAxes>
+                    <lcusb:ViewXY.PointLineSeries>
+                        <lcusb:PointLineSeries PointsVisible="True" Points="{Binding testData,ElementName=window}"/>
+                    </lcusb:ViewXY.PointLineSeries>
+                    <lcusb:ViewXY.LineSeriesCursors>
+                        <lcusb:LineSeriesCursor ValueAtXAxis="5" SnapToPoints="True"/>
+                    </lcusb:ViewXY.LineSeriesCursors>
+                </lcusb:ViewXY>
+            </lcusb:LightningChartUltimate.ViewXY>
+        </lcusb:LightningChartUltimate>
+    </Grid>
+</Window>
