@@ -1,5 +1,4 @@
-﻿using Arction.Wpf.SemibindableCharting.SeriesXY;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 using Arction.Wpf.SemibindableCharting;
 
-namespace WpfApp1
+namespace RE.MainProject.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// LightningChartView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LightningChartView : Window
     {
-        public MainWindow()
+        public LightningChartView()
         {
             InitializeComponent();
         }
@@ -41,7 +40,7 @@ namespace WpfApp1
         {
             const int length = 1000;
             SeriesPoint[] seriesPoints = new SeriesPoint[length];
-            for(int i = 0;i<length;i++)
+            for (int i = 0; i < length; i++)
             {
                 seriesPoints[i].X = i;
                 seriesPoints[i].Y = i * i;
