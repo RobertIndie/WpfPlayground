@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="window_Loaded">
     <Grid>
-        <lcusb:LightningChartUltimate Name="chart" HorizontalAlignment="Left" Margin="76,27,0,0" VerticalAlignment="Top" Height="341" Width="659">
+        <lcusb:LightningChartUltimate Name="chart" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
             <lcusb:LightningChartUltimate.ViewXY>
                 <lcusb:ViewXY>
                     <lcusb:ViewXY.XAxes>
