@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 using Arction.Wpf.SemibindableCharting;
 
 namespace RE.MainProject.View
@@ -24,6 +24,18 @@ namespace RE.MainProject.View
         public LightningChartView()
         {
             InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Tick += (sender, e) => {
+                List<SeriesPoint> list = new List<SeriesPoint>(testData);
+                list.Add(new SeriesPoint()
+                {
+                    X = list[list.Count() - 1].X + 1,
+                    Y = (list[list.Count() - 1].X + 1) * Math.Sin(list[list.Count() - 1].X + 1)
+                });
+                testData = list.ToArray();
+            };
+            timer.Start();
         }
 
         public SeriesPoint[] testData
