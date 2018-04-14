@@ -34,18 +34,19 @@ namespace RE.MainProject.View
 
         // Using a DependencyProperty as the backing store for testData.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty testDataProperty =
-            DependencyProperty.Register("testData", typeof(SeriesPoint[]), typeof(MainWindow), new PropertyMetadata(default(SeriesPoint[])));
+            DependencyProperty.Register("testData", typeof(SeriesPoint[]), typeof(LightningChartView), new PropertyMetadata());
 
         private void window_Loaded(object sender, RoutedEventArgs e)
         {
-            const int length = 1000;
+            Console.WriteLine("Load window");
+            const int length = 10000;
             SeriesPoint[] seriesPoints = new SeriesPoint[length];
             for (int i = 0; i < length; i++)
             {
                 seriesPoints[i].X = i;
-                seriesPoints[i].Y = i * i;
+                seriesPoints[i].Y = i * Math.Sin(i);
             }
-            testData = seriesPoints;
+            testData=seriesPoints;
         }
     }
 }
