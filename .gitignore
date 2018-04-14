@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /MainProject/bin/Debug/MainProject.exe
 /MainProject/bin/Debug/MainProject.pdb
+/Test
