@@ -12,13 +12,13 @@
             <lcusb:LightningChartUltimate.ViewXY>
                 <lcusb:ViewXY>
                     <lcusb:ViewXY.XAxes>
-                        <lcusb:AxisX Maximum="20" ValueType="Number"/>
+                        <lcusb:AxisX Maximum="10000" ValueType="Number"/>
                     </lcusb:ViewXY.XAxes>
                     <lcusb:ViewXY.YAxes>
-                        <lcusb:AxisY Maximum="100" ValueType="Number"/>
+                        <lcusb:AxisY Maximum="10000" ValueType="Number"/>
                     </lcusb:ViewXY.YAxes>
                     <lcusb:ViewXY.PointLineSeries>
-                        <lcusb:PointLineSeries PointsVisible="True" Points="{Binding testData, ElementName=window}"/>
+                        <lcusb:PointLineSeries PointsVisible="False" Points="{Binding testData, ElementName=window}"/>
                     </lcusb:ViewXY.PointLineSeries>
                     <lcusb:ViewXY.LineSeriesCursors>
                         <lcusb:LineSeriesCursor ValueAtXAxis="5" SnapToPoints="True"/>

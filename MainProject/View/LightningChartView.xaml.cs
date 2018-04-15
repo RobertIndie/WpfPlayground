@@ -24,7 +24,7 @@ namespace RE.MainProject.View
         public LightningChartView()
         {
             InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
+            /*DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(1);
             timer.Tick += (sender, e) => {
                 List<SeriesPoint> list = new List<SeriesPoint>(testData);
@@ -35,7 +35,7 @@ namespace RE.MainProject.View
                 });
                 testData = list.ToArray();
             };
-            timer.Start();
+            timer.Start();*/
         }
 
         public SeriesPoint[] testData
@@ -51,7 +51,7 @@ namespace RE.MainProject.View
         private void window_Loaded(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Load window");
-            const int length = 10000;
+            const int length = 10000000;
             SeriesPoint[] seriesPoints = new SeriesPoint[length];
             for (int i = 0; i < length; i++)
             {
