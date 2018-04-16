@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Arction.Wpf.SemibindableCharting;
+using NPOI.HSSF;
 
 namespace RE.MainProject.View
 {
