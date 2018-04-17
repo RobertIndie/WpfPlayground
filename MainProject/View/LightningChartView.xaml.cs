@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using Arction.Wpf.SemibindableCharting;
 using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
 
 namespace RE.MainProject.View
 {
@@ -54,6 +55,10 @@ namespace RE.MainProject.View
         {
             Console.WriteLine("Load window");
             LoadExcel();
+        }
+
+        private void GenData()
+        {
             const int length = 10000000;
             SeriesPoint[] seriesPoints = new SeriesPoint[length];
             for (int i = 0; i < length; i++)
@@ -61,28 +66,32 @@ namespace RE.MainProject.View
                 seriesPoints[i].X = i;
                 seriesPoints[i].Y = i * Math.Sin(i);
             }
-            testData=seriesPoints;
+            testData = seriesPoints;
         }
 
         private void LoadExcel()
         {
-            HSSFWorkbook hSSFWorkbook;
-            using (FileStream file = new FileStream("test.xls", FileMode.Open, FileAccess.Read))
+            HSSFWorkbook hSSFWorkbook;//暂时不支持导入xlsx
+            using (FileStream file = new FileStream("test.xls", FileMode.Open, FileAccess.Read,FileShare.ReadWrite))
             {
                 hSSFWorkbook = new HSSFWorkbook(file);
             }
             var sheet = hSSFWorkbook.GetSheetAt(0);
             var rows = sheet.GetRowEnumerator();
+            List<SeriesPoint> points = new List<SeriesPoint>();
             while(rows.MoveNext())
             {
                 HSSFRow row = rows.Current as HSSFRow;
 
-                for(int i=0;i<row.LastCellNum;i++)
-                {
-                    var cell = row.GetCell(i);
-                    Console.WriteLine(cell.StringCellValue);
-                }
+                //for(int i=0;i<row.LastCellNum;i++)
+                //{
+                //    var cell = row.GetCell(i);
+                //    Console.WriteLine(cell.StringCellValue);
+                //}
+
+                points.Add(new SeriesPoint(row.GetCell(0).NumericCellValue, row.GetCell(1).NumericCellValue));
             }
+            testData = points.ToArray();
         }
     }
 }
