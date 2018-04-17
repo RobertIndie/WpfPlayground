@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Arction.Wpf.SemibindableCharting;
-using NPOI.HSSF;
+using NPOI.HSSF.UserModel;
 
 namespace RE.MainProject.View
 {
@@ -24,7 +25,7 @@ namespace RE.MainProject.View
     {
         public LightningChartView()
         {
-            InitializeComponent();
+            InitializeComponent();//最好别在这写与WPF无关的代码，否则报错都不知道是啥错。请移步到windwo_Loaded方法
             /*DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(1);
             timer.Tick += (sender, e) => {
@@ -52,6 +53,7 @@ namespace RE.MainProject.View
         private void window_Loaded(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Load window");
+            LoadExcel();
             const int length = 10000000;
             SeriesPoint[] seriesPoints = new SeriesPoint[length];
             for (int i = 0; i < length; i++)
@@ -60,6 +62,27 @@ namespace RE.MainProject.View
                 seriesPoints[i].Y = i * Math.Sin(i);
             }
             testData=seriesPoints;
+        }
+
+        private void LoadExcel()
+        {
+            HSSFWorkbook hSSFWorkbook;
+            using (FileStream file = new FileStream("test.xls", FileMode.Open, FileAccess.Read))
+            {
+                hSSFWorkbook = new HSSFWorkbook(file);
+            }
+            var sheet = hSSFWorkbook.GetSheetAt(0);
+            var rows = sheet.GetRowEnumerator();
+            while(rows.MoveNext())
+            {
+                HSSFRow row = rows.Current as HSSFRow;
+
+                for(int i=0;i<row.LastCellNum;i++)
+                {
+                    var cell = row.GetCell(i);
+                    Console.WriteLine(cell.StringCellValue);
+                }
+            }
         }
     }
 }
