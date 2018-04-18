@@ -18,7 +18,7 @@
                         <lcusb:AxisY Maximum="10000" ValueType="Number"/>
                     </lcusb:ViewXY.YAxes>
                     <lcusb:ViewXY.PointLineSeries>
-                        <lcusb:PointLineSeries PointsVisible="False" Points="{Binding testData, ElementName=window}"/>
+                        <lcusb:PointLineSeries PointsVisible="True" Points="{Binding testData, ElementName=window}"/>
                     </lcusb:ViewXY.PointLineSeries>
                     <lcusb:ViewXY.LineSeriesCursors>
                         <lcusb:LineSeriesCursor ValueAtXAxis="5" SnapToPoints="True"/>

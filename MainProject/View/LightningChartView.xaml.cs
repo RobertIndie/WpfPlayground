@@ -79,6 +79,7 @@ namespace RE.MainProject.View
             var sheet = hSSFWorkbook.GetSheetAt(0);
             var rows = sheet.GetRowEnumerator();
             List<SeriesPoint> points = new List<SeriesPoint>();
+            int id = 0;
             while(rows.MoveNext())
             {
                 HSSFRow row = rows.Current as HSSFRow;
@@ -89,7 +90,7 @@ namespace RE.MainProject.View
                 //    Console.WriteLine(cell.StringCellValue);
                 //}
 
-                points.Add(new SeriesPoint(row.GetCell(0).NumericCellValue, row.GetCell(1).NumericCellValue));
+                points.Add(new SeriesPoint(id++, row.GetCell(1).NumericCellValue));
             }
             testData = points.ToArray();
         }
