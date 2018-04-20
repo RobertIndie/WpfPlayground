@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RE.MainProject
+namespace RE.MainProject.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// StatusBarView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StatusBarView : UserControl
     {
-        public MainWindow()
+        public StatusBarView()
         {
             InitializeComponent();
         }

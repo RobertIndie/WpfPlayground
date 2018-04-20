@@ -5,7 +5,7 @@
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006" d1p1:Ignorable="d"
              xmlns:local="clr-namespace:RE.MainProject"
              xmlns:vm="clr-namespace:RE.MainProject.ViewModel"
-             StartupUri="View/LightningChartView.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
