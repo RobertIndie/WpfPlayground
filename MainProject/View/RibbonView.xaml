@@ -8,8 +8,8 @@
         xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
         mc:Ignorable="d"
         >
-    
-    <DockPanel>
+
+    <DockPanel DataContext="{Binding Source={StaticResource Locator}}">
         <ribbon:Ribbon  VerticalAlignment="Top">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:Backstage>
@@ -32,6 +32,29 @@
             </ribbon:Ribbon.ApplicationMenu>
 
             <ribbon:Tab Label="Home">
+
+                <ribbon:Group Label="View">
+                    <ribbon:Button Label="Xml Explorer" Command="{Binding Ribbon.ShowXmlExplorerCommand, Mode=OneWay}" IsChecked="{Binding XmlExplorer.XmlExplorer.IsShowed}">
+                        <ribbon:Button.ImageSourceSmall>
+                            <BitmapImage UriSource="pack://application:,,,/ActiproSoftware.Ribbon.Wpf;component/Products/Ribbon/Images/ButtonDefault32.png" UriCachePolicy="{x:Null}"/>
+                        </ribbon:Button.ImageSourceSmall>
+                    </ribbon:Button>
+                    <ribbon:Button Label="New Button">
+                        <ribbon:Button.ImageSourceSmall>
+                            <BitmapImage UriSource="pack://application:,,,/ActiproSoftware.Ribbon.Wpf;component/Products/Ribbon/Images/ButtonDefault32.png" UriCachePolicy="{x:Null}"/>
+                        </ribbon:Button.ImageSourceSmall>
+                    </ribbon:Button>
+                    <ribbon:Button Label="New Button">
+                        <ribbon:Button.ImageSourceSmall>
+                            <BitmapImage UriSource="pack://application:,,,/ActiproSoftware.Ribbon.Wpf;component/Products/Ribbon/Images/ButtonDefault32.png" UriCachePolicy="{x:Null}"/>
+                        </ribbon:Button.ImageSourceSmall>
+                    </ribbon:Button>
+                </ribbon:Group>
+
+
+            </ribbon:Tab>
+
+            <ribbon:Tab Label="New Tab">
 
                 <ribbon:Group Label="Group_A">
                     <ribbon:Group.Variants>
@@ -75,6 +98,7 @@
                         </ribbon:Button>
                     </ribbon:StackPanel>
                 </ribbon:Group>
+
 
                 <ribbon:Group Label="Group_B">
                     <ribbon:RowPanel ThreeRowItemSortOrder="2 1 3 4 5 0 6 7">
@@ -133,12 +157,8 @@
                     </ribbon:StackPanel>
 
                 </ribbon:Group>
-
-            </ribbon:Tab>
-            <ribbon:Tab Label="New Tab">
-                <ribbon:Group Label="New Group"/>
             </ribbon:Tab>
 
         </ribbon:Ribbon>
-    </DockPanel> 
+    </DockPanel>
 </UserControl>

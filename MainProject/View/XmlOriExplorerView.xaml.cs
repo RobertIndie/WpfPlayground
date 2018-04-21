@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace RE.MainProject.View
 {
     /// <summary>
-    /// RibbonView.xaml 的交互逻辑
+    /// XmlOriExplorer.xaml 的交互逻辑
     /// </summary>
-    public partial class RibbonView : UserControl
+    public partial class XmlOriExplorerView : UserControl
     {
-        public RibbonView()
+        public XmlOriExplorerView()
         {
             InitializeComponent();
-            CommandBinding binding = new CommandBinding(ApplicationCommands.New);
         }
-
-        
     }
 }

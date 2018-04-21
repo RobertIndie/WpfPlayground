@@ -6,9 +6,10 @@
              xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
              xmlns:local="clr-namespace:RE.MainProject.View"
              mc:Ignorable="d" >
+    
     <docking:DockSite x:Name="dockSite"  
-						  CanDocumentWindowsFloat="True" FloatingWindowTitle="Docking/MDI Simple IDE Demo"
-						  >
+					  CanDocumentWindowsFloat="True" 
+                      FloatingWindowTitle="Docking/MDI Simple IDE Demo">
 
         <docking:DockSite.AutoHideRightContainers>
             <docking:ToolWindowContainer>
@@ -28,8 +29,12 @@
 
                 <docking:SplitContainer Orientation="Vertical">
                     <docking:ToolWindowContainer>
-                        <docking:ToolWindow x:Name="solutionExplorerToolWindow" Title="Solution Explorer" 
-												Description="Displays the current project">
+                        <docking:ToolWindow x:Name="xmlExplorerToolWindow" Title="Xml Explorer" >
+                            <local:XmlExplorerView></local:XmlExplorerView>
+                        </docking:ToolWindow>
+
+                        <docking:ToolWindow x:Name="xmlOriExplorerToolWindow" Title="Xml Ori Explorer" >
+                            <local:XmlOriExplorerView></local:XmlOriExplorerView>
                         </docking:ToolWindow>
 
                         <docking:ToolWindow x:Name="documentOutlineToolWindow" TabText="Document Outline" Title="Document Outline" 

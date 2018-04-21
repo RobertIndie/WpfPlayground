@@ -262,12 +262,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Basic\MyCommand.cs" />
+    <Compile Include="Model\DockSiteModel.cs" />
+    <Compile Include="Model\RibbonModel.cs" />
     <Compile Include="Model\UserInfoModel.cs" />
     <Compile Include="Model\WelcomeModel.cs" />
+    <Compile Include="Model\XmlExplorerModel.cs" />
+    <Compile Include="ViewModel\DockSiteViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RibbonViewModel.cs" />
     <Compile Include="ViewModel\UserInfoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
+    <Compile Include="ViewModel\SampleData.cs" />
+    <Compile Include="ViewModel\XmlExplorerViewModel.cs" />
     <Compile Include="View\DockSiteView.xaml.cs">
       <DependentUpon>DockSiteView.xaml</DependentUpon>
     </Compile>
@@ -285,6 +293,12 @@
     </Compile>
     <Compile Include="View\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\XmlExplorerView.xaml.cs">
+      <DependentUpon>XmlExplorerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\XmlOriExplorerView.xaml.cs">
+      <DependentUpon>XmlOriExplorerView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -322,6 +336,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\XmlExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\XmlOriExplorerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -354,7 +376,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Basic\" />
     <Folder Include="Controls\" />
     <Folder Include="Images\" />
   </ItemGroup>

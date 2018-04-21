@@ -45,6 +45,10 @@ namespace RE.MainProject.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<WelcomeViewModel>();
             SimpleIoc.Default.Register<UserInfoViewModel>();
+            SimpleIoc.Default.Register<XmlExplorerViewModel>();
+            SimpleIoc.Default.Register<DockSiteViewModel>();
+            SimpleIoc.Default.Register<RibbonViewModel>();
+            SimpleIoc.Default.Register<SampleData>();
         }
         
         public MainViewModel Main
@@ -69,6 +73,35 @@ namespace RE.MainProject.ViewModel
                 return ServiceLocator.Current.GetInstance<UserInfoViewModel>();
             }
         }
+        public SampleData Data
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SampleData>();
+            }
+        }
+        public XmlExplorerViewModel XmlExplorer
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<XmlExplorerViewModel>();
+            }
+        }
+        public DockSiteViewModel DockSite
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<DockSiteViewModel>();
+            }
+        }
+        public RibbonViewModel Ribbon
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<RibbonViewModel>();
+            }
+        }
+
 
         public static void Cleanup()
         {

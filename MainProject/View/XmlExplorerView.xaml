@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="RE.MainProject.View.XmlExplorerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RE.MainProject.View"
+             xmlns:editors="http://schemas.actiprosoftware.com/winfx/xaml/editors"
+             xmlns:datagrid="http://schemas.actiprosoftware.com/winfx/xaml/datagrid"
+		     xmlns:datagrideditors="http://schemas.actiprosoftware.com/winfx/xaml/datagrideditors"
+		     xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
+             mc:Ignorable="d" >
+
+    <Grid DataContext="{Binding Source={StaticResource Locator}}">
+        <datagrid:ThemedDataGrid x:Name="datagrid"  AutoGenerateColumns="False" CanUserAddRows="False"
+					CanUserDeleteRows="False"
+					SelectionUnit="FullRow" GridLinesVisibility="All" FrozenColumnCount="1" ItemsSource="{Binding Data.Values}"
+					>
+            <datagrid:ThemedDataGrid.Columns>
+                <datagrideditors:DataGridInt32Column Binding="{Binding Integer}" Header="Integer"/>
+                <DataGridTextColumn Binding="{Binding String}" Header="String" />
+                <datagrideditors:DataGridDateColumn Binding="{Binding DateTime}" Header="Date"  />
+                <DataGridCheckBoxColumn Binding="{Binding Boolean}" Header="Boolean" />
+                <DataGridTextColumn Binding="{Binding LongString}" Header="Long String" />
+            </datagrid:ThemedDataGrid.Columns>
+        </datagrid:ThemedDataGrid>
+    </Grid>
+</UserControl>
