@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RE.MainProject.ViewModel;
 
 namespace RE.MainProject.View
 {
@@ -23,9 +24,7 @@ namespace RE.MainProject.View
         public RibbonView()
         {
             InitializeComponent();
-            CommandBinding binding = new CommandBinding(ApplicationCommands.New);
+            this.DataContext = new RibbonViewModel();
         }
-
-        
     }
 }

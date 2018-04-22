@@ -16,8 +16,9 @@ namespace RE.MainProject.ViewModel
         private XmlExplorerModel xmlExplorer;
         public XmlExplorerViewModel()
         {
+            Console.WriteLine("XmlExplorerView Loaded");
             XmlExplorer = new XmlExplorerModel();
-            Messenger.Default.Register<bool>(this, "ShowXmlPanel", ShowXmlPanel);
+            //Messenger.Default.Register<bool>(this, "ShowXmlPanel", ShowXmlPanel);
         }
 
         public XmlExplorerModel XmlExplorer

@@ -14,6 +14,7 @@ namespace RE.MainProject.ViewModel
     {
         public RibbonViewModel()
         {
+            Console.WriteLine("RibbonView Mounted");
             Ribbon = new RibbonModel();
         }
 

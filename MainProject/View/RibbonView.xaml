@@ -6,10 +6,10 @@
         xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon"
         xmlns:local="clr-namespace:RE.MainProject.View"
         xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
-        mc:Ignorable="d"
+        mc:Ignorable="d" DataContext="{Binding Source={StaticResource Locator}, Path=DockSite}"
         >
 
-    <DockPanel DataContext="{Binding Source={StaticResource Locator}}">
+    <DockPanel>
         <ribbon:Ribbon  VerticalAlignment="Top">
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:Backstage>

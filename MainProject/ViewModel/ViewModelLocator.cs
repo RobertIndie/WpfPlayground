@@ -48,6 +48,7 @@ namespace RE.MainProject.ViewModel
             SimpleIoc.Default.Register<XmlExplorerViewModel>();
             SimpleIoc.Default.Register<DockSiteViewModel>();
             SimpleIoc.Default.Register<RibbonViewModel>();
+            SimpleIoc.Default.Register<StatusBarViewModel>();
             SimpleIoc.Default.Register<SampleData>();
         }
         
@@ -99,6 +100,13 @@ namespace RE.MainProject.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<RibbonViewModel>();
+            }
+        }
+        public StatusBarViewModel StatusBar
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<StatusBarViewModel>();
             }
         }
 

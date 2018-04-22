@@ -265,12 +265,14 @@
     <Compile Include="Basic\MyCommand.cs" />
     <Compile Include="Model\DockSiteModel.cs" />
     <Compile Include="Model\RibbonModel.cs" />
+    <Compile Include="Model\StatusBarModel.cs" />
     <Compile Include="Model\UserInfoModel.cs" />
     <Compile Include="Model\WelcomeModel.cs" />
     <Compile Include="Model\XmlExplorerModel.cs" />
     <Compile Include="ViewModel\DockSiteViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RibbonViewModel.cs" />
+    <Compile Include="ViewModel\StatusBarViewModel.cs" />
     <Compile Include="ViewModel\UserInfoViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
