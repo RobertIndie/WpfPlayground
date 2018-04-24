@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
              xmlns:local="clr-namespace:RE.MainProject.View"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" DataContext="{Binding DockSite, Mode=OneWay, Source={StaticResource Locator}}" >
     
     <docking:DockSite x:Name="dockSite"  
 					  CanDocumentWindowsFloat="True" 
@@ -29,14 +29,6 @@
 
                 <docking:SplitContainer Orientation="Vertical">
                     <docking:ToolWindowContainer>
-                        <docking:ToolWindow x:Name="xmlExplorerToolWindow" Title="Xml Explorer" >
-                            <local:XmlExplorerView></local:XmlExplorerView>
-                        </docking:ToolWindow>
-
-                        <docking:ToolWindow x:Name="xmlOriExplorerToolWindow" Title="Xml Ori Explorer" >
-                            <local:XmlOriExplorerView></local:XmlOriExplorerView>
-                        </docking:ToolWindow>
-
                         <docking:ToolWindow x:Name="documentOutlineToolWindow" TabText="Document Outline" Title="Document Outline" 
 												Description="Displays the primary document's document outline">
                             <TextBox x:Name="documentOutlineTextBox" Grid.Row="1" BorderThickness="0" Text="(none)" AcceptsReturn="True" IsReadOnly="True" 

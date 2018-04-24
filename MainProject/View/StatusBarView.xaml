@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
              xmlns:local="clr-namespace:RE.MainProject.View"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" DataContext="{Binding StatusBar, Mode=OneWay, Source={StaticResource Locator}}" >
     <shared:PixelSnapper>
         <StatusBar FocusManager.IsFocusScope="True">
             <StatusBar.ItemsPanel>

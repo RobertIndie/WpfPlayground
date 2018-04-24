@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using RE.MainProject.ViewModel;
 
 namespace RE.MainProject.View
 {
@@ -24,7 +23,6 @@ namespace RE.MainProject.View
         public StatusBarView()
         {
             InitializeComponent();
-            this.DataContext = new StatusBarViewModel();
         }
     }
 }

@@ -13,6 +13,7 @@ namespace RE.MainProject.ViewModel
         public DockSiteViewModel()
         {
             Console.WriteLine("DockSiteView Mounted");
+            Console.WriteLine(this);
             DockSite = new DockSiteModel();
         }
 

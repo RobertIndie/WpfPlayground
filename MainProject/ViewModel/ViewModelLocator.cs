@@ -43,8 +43,7 @@ namespace RE.MainProject.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<WelcomeViewModel>();
-            SimpleIoc.Default.Register<UserInfoViewModel>();
+
             SimpleIoc.Default.Register<XmlExplorerViewModel>();
             SimpleIoc.Default.Register<DockSiteViewModel>();
             SimpleIoc.Default.Register<RibbonViewModel>();
@@ -57,21 +56,6 @@ namespace RE.MainProject.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
-        
-        public WelcomeViewModel Welcome
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<WelcomeViewModel>();
-            }
-        }
-        public UserInfoViewModel UserInfo
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<UserInfoViewModel>();
             }
         }
         public SampleData Data
