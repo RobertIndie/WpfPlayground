@@ -29,7 +29,29 @@
             </StackPanel>
             <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
                 <TextBlock Text="Hello " ></TextBlock>
-                <TextBlock Text="{Binding UserInfo.UserName}" ></TextBlock>
+                <TextBlock x:Name="HelloText" Text="{Binding UserInfo.UserName}" ></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
+                <TextBlock Text="(Without public property:) " ></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
+                <TextBlock Text="Hello " ></TextBlock>
+                <TextBlock Text="{Binding Text, ElementName=HelloText}" ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="0,10,0,0" Orientation="Vertical" ToolTip="top" >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="150" Text="获取自身宽度:"  ></TextBlock>
+                    <TextBlock Width="200" Text="{Binding Path=Width,RelativeSource={RelativeSource Mode=Self}}" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" ToolTip="parent" >
+                    <TextBlock Width="150" Text="查找上一层ToolTip:" ></TextBlock>
+                    <TextBlock Text="{Binding Path=ToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="150" Text="查找上二层ToolTip:" ></TextBlock>
+                    <TextBlock Text="{Binding Path=ToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel},AncestorLevel=2}}"></TextBlock>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
