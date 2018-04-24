@@ -11,6 +11,7 @@
 					  CanDocumentWindowsFloat="True" 
                       FloatingWindowTitle="Docking/MDI Simple IDE Demo">
 
+        
         <docking:DockSite.AutoHideRightContainers>
             <docking:ToolWindowContainer>
                 <docking:ToolWindow x:Name="findReplaceToolWindow" Title="Find &amp; Replace" ContainerAutoHideSize="230,300" ContainerDockedSize="230,300"
@@ -20,8 +21,11 @@
         </docking:DockSite.AutoHideRightContainers>
 
         <docking:SplitContainer Orientation="Vertical">
+            
             <docking:SplitContainer>
-
+                <docking:ToolWindowContainer>
+                    <local:BindDisplayView/>
+                </docking:ToolWindowContainer>
                 <!-- Workspace -->
                 <docking:Workspace x:Name="workspace">
                     <docking:TabbedMdiHost x:Name="tabbedMdiHost" />
@@ -29,6 +33,7 @@
 
                 <docking:SplitContainer Orientation="Vertical">
                     <docking:ToolWindowContainer>
+                        
                         <local:HelloWorldView/>
 
                         <docking:ToolWindow x:Name="documentOutlineToolWindow" TabText="Document Outline" Title="Document Outline" 

@@ -10,20 +10,12 @@ namespace RE.MainProject.ViewModel
 {
     public class HelloWorldViewModel: ViewModelBase
     {
-        private HelloWorldModel _helloWorld;
-        public HelloWorldModel HelloWorld
-        {
-            get { return _helloWorld; }
-            set { _helloWorld = value; RaisePropertyChanged(() => HelloWorld); }
-        }
-
         public HelloWorldViewModel()
         {
             Console.WriteLine("HelloWorldView Mounted");
-            HelloWorld = new HelloWorldModel();
         }
 
-        private string _info = "Hello World?";
+        private string _info = "Hello World!?";
         public string Info
         {
             get { return _info; }

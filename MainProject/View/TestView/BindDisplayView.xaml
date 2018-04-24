@@ -1,0 +1,39 @@
+﻿<docking:ToolWindow x:Class="RE.MainProject.View.BindDisplayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
+             xmlns:local="clr-namespace:RE.MainProject.View"
+             mc:Ignorable="d" TabText="Bind Display" Title="Bind Display" 
+             DataContext="{Binding BindDisplay, Mode=OneWay, Source={StaticResource Locator}}"
+             ContainerMinSize="300,30"
+             >
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Mode=OneWay:" ></TextBlock>
+                <TextBox Text="{Binding UserInfo.UserName,
+                    UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" Width="100" ></TextBox>
+            </StackPanel>
+            
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="Mode=TwoWay:" ></TextBlock>
+                <TextBox Text="{Binding UserInfo.UserName,
+                    UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Width="100" ></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="Mode=OneWayToSource:" ></TextBlock>
+                <TextBox Text="{Binding UserInfo.UserName,
+                    UpdateSourceTrigger=PropertyChanged,Mode=OneWayToSource}" Width="100" ></TextBox>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
+                <TextBlock Text="Hello " ></TextBlock>
+                <TextBlock Text="{Binding UserInfo.UserName}" ></TextBlock>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</docking:ToolWindow>

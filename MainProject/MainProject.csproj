@@ -264,20 +264,24 @@
     </ApplicationDefinition>
     <Compile Include="Basic\MyCommand.cs" />
     <Compile Include="Model\DockSiteModel.cs" />
-    <Compile Include="Model\TestModel\HelloWorldModel.cs" />
     <Compile Include="Model\RibbonModel.cs" />
     <Compile Include="Model\StatusBarModel.cs" />
     <Compile Include="Model\ToolModel\XmlExplorerModel.cs" />
+    <Compile Include="Model\UserInfoModel.cs" />
     <Compile Include="ViewModel\DockSiteViewModel.cs" />
     <Compile Include="ViewModel\TestViewModel\HelloWorldViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RibbonViewModel.cs" />
     <Compile Include="ViewModel\StatusBarViewModel.cs" />
+    <Compile Include="ViewModel\TestViewModel\BindDisplayViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\SampleData.cs" />
     <Compile Include="ViewModel\ToolViewModel\XmlExplorerViewModel.cs" />
     <Compile Include="View\DockSiteView.xaml.cs">
       <DependentUpon>DockSiteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestView\BindDisplayView.xaml.cs">
+      <DependentUpon>BindDisplayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TestView\HelloWorldView.xaml.cs">
       <DependentUpon>HelloWorldView.xaml</DependentUpon>
@@ -312,6 +316,10 @@
     <Page Include="View\DockSiteView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TestView\BindDisplayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\TestView\HelloWorldView.xaml">
       <SubType>Designer</SubType>
@@ -371,6 +379,7 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Images\" />
+    <Folder Include="Model\TestModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
