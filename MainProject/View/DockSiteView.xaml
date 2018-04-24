@@ -29,6 +29,8 @@
 
                 <docking:SplitContainer Orientation="Vertical">
                     <docking:ToolWindowContainer>
+                        <local:HelloWorldView/>
+
                         <docking:ToolWindow x:Name="documentOutlineToolWindow" TabText="Document Outline" Title="Document Outline" 
 												Description="Displays the primary document's document outline">
                             <TextBox x:Name="documentOutlineTextBox" Grid.Row="1" BorderThickness="0" Text="(none)" AcceptsReturn="True" IsReadOnly="True" 

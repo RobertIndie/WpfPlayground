@@ -13,7 +13,6 @@ namespace RE.MainProject.ViewModel
         public StatusBarViewModel()
         {
             Console.WriteLine("StatusBarView Mounted");
-            Console.WriteLine(this);
             StatusBar = new StatusBarModel();
         }
 
